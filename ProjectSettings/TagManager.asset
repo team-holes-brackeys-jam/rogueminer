@@ -44,3 +44,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Terrain
+    uniqueID: 839383257
+    locked: 0
+  - name: Items
+    uniqueID: 2342915707
+    locked: 0
+  - name: Characters
+    uniqueID: 279293265
+    locked: 0
+  - name: Effects
+    uniqueID: 2749926085
+    locked: 0
