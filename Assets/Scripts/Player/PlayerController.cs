@@ -63,14 +63,19 @@ public class PlayerController : Singleton<PlayerController>
 
     private void FixedUpdate()
     {
+        Move();
         PassiveShot();
     }
-    
+
+    private void Move()
+    {
+        var inputValue = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        _rigidbody2D.MovePosition(transform.position + (Vector3) inputValue * (Time.deltaTime * speed));
+    }
+
     private void PassiveShot()
     {
         _enemies = _charactersPivot.GetComponentsInChildren<EnemyController>().Select(o => o.transform).ToList();
-        var inputValue = new Vector2(-Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        _rigidbody2D.MovePosition(transform.position + (Vector3) inputValue * (Time.deltaTime * speed));
 
         var closestDist = float.MaxValue;
         var closestEnemy = GetClosestEnemy(closestDist);

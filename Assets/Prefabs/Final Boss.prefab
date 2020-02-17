@@ -94,8 +94,9 @@ GameObject:
   - component: {fileID: 5070572614065707386}
   - component: {fileID: 1177735209}
   - component: {fileID: -8041158802472263757}
+  - component: {fileID: 7070114932568927904}
   m_Layer: 0
-  m_Name: Enemy 2
+  m_Name: Final Boss
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,7 +111,7 @@ Transform:
   m_GameObject: {fileID: 833592122486092567}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 4007521201765923488}
   m_Father: {fileID: 0}
@@ -153,11 +154,11 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 279293265
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 1639214462598301798, guid: bcf83b525560606438084e1f8d5d625b,
     type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -195,3 +196,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65b2d4680d34a4f4dbbdc09ce152a9a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7070114932568927904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833592122486092567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0206067e98cf04bbf9a69a65402ff4b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  coinPrefab: {fileID: 6925059524287309131, guid: 0b47cf8b3cbbdb3459c60c5c3bfeb5aa,
+    type: 3}
+  coinReward: 100

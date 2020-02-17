@@ -65,6 +65,24 @@ TextureImporter:
   - first:
       213: -4672163745296329812
     second: tiles_12
+  - first:
+      213: 1427480686868151490
+    second: tiles_8
+  - first:
+      213: -5665760732212086345
+    second: tiles_9
+  - first:
+      213: -966303681706475815
+    second: tiles_10
+  - first:
+      213: 7998718104268609680
+    second: tiles_11
+  - first:
+      213: 8040165401895773039
+    second: tiles_12
+  - first:
+      213: -8305803365058092108
+    second: tiles_13
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -331,8 +349,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b7dbce9c34650590800000000000000
-      internalID: -7708644975649761358
+      spriteID: 2ccb1802f1e6fc310800000000000000
+      internalID: 1427480686868151490
       vertices: []
       indices: 
       edges: []
@@ -352,8 +370,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 192ae4dfd9f04cae0800000000000000
-      internalID: -1530080802165054831
+      spriteID: 7b9342ee1ac2f51b0800000000000000
+      internalID: -5665760732212086345
       vertices: []
       indices: 
       edges: []
@@ -373,8 +391,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 30b6863389a7c2d40800000000000000
-      internalID: 5560954434011818755
+      spriteID: 9debbb2dbeff692f0800000000000000
+      internalID: -966303681706475815
       vertices: []
       indices: 
       edges: []
@@ -394,8 +412,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c55585bce4d5da30800000000000000
-      internalID: 4239528737361974724
+      spriteID: 0989a6f9cb7210f60800000000000000
+      internalID: 7998718104268609680
       vertices: []
       indices: 
       edges: []
@@ -415,8 +433,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca3572de3d3292fb0800000000000000
-      internalID: -4672163745296329812
+      spriteID: f63226b95d7649f60800000000000000
+      internalID: 8040165401895773039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_13
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 192
+        width: 32
+        height: 32
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b3e77378dbdbbc80800000000000000
+      internalID: -8305803365058092108
       vertices: []
       indices: 
       edges: []
