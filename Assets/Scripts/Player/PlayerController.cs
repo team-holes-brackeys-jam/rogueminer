@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : Singleton<PlayerController>
 {
@@ -13,6 +15,7 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private float attackSpeed = 1f;
     [SerializeField] private bool isGodMode;
+    [SerializeField] private Text moneyText;
     private float _secondsWhileCurrentAttack;
     
     private Rigidbody2D _rigidbody2D;
@@ -26,12 +29,26 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField]
     private float bulletSpeed = 10f;
 
+
+    private int money;
+
+    private int Money
+    {
+        get => money;
+        set
+        {
+            money = value;
+            moneyText.text = "Money: " + money;
+        }
+    }
+
     private void Awake()
     {
         if (isGodMode)
         {
             attackSpeed = .2f;
             speed = 20;
+            miningSpeed = 200f;
         }
         _secondsWhileCurrentAttack = attackSpeed;
     }
@@ -49,7 +66,18 @@ public class PlayerController : Singleton<PlayerController>
             _secondsWhileCurrentAttack += Time.deltaTime;
         }
     }
-    
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (!other.gameObject.CompareTag("Coin"))
+        {
+            return;
+        }
+
+        Money += 1;
+        Destroy(other.gameObject);
+    }
+
     private void OnCollisionStay2D(Collision2D other)
     {
         if (!other.gameObject.CompareTag("InnerWall"))

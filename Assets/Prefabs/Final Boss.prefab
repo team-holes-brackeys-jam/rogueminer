@@ -93,8 +93,7 @@ GameObject:
   - component: {fileID: 674783857019759674}
   - component: {fileID: 5070572614065707386}
   - component: {fileID: 1177735209}
-  - component: {fileID: -8041158802472263757}
-  - component: {fileID: 7070114932568927904}
+  - component: {fileID: 1810887471549170000}
   m_Layer: 0
   m_Name: Final Boss
   m_TagString: Enemy
@@ -184,7 +183,7 @@ CircleCollider2D:
   m_Offset: {x: 0.5, y: 0.5}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &-8041158802472263757
+--- !u!114 &1810887471549170000
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -193,22 +192,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 833592122486092567}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65b2d4680d34a4f4dbbdc09ce152a9a2, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a1536650c4bc5e4a9bfdfe1129f51b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7070114932568927904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 833592122486092567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0206067e98cf04bbf9a69a65402ff4b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 1
+  health: 4
   coinPrefab: {fileID: 6925059524287309131, guid: 0b47cf8b3cbbdb3459c60c5c3bfeb5aa,
     type: 3}
-  coinReward: 100
+  coinReward: 2
+  gameOverStuff: {fileID: 0}

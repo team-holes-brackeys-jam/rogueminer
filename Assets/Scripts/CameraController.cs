@@ -42,7 +42,6 @@ public class CameraController : MonoBehaviour
         bloomFX.intensity.value = 30f;
         while (bloomFX.intensity.value > 10f)
         {
-            Debug.Log(bloomFX.intensity.value);
             yield return null;
             bloomFX.intensity.value -= Time.deltaTime * bloomPulseSpeed;
         }
