@@ -34,7 +34,7 @@ public class CameraController : MonoBehaviour
             }
         }
         // TODO Better camera pls
-        transform.position = Vector3.MoveTowards(transform.position, _playerTransform.position, speed * Time.deltaTime) + Vector3.forward;
+        transform.position = Vector3.MoveTowards(transform.position, _playerTransform.position - Vector3.forward, speed * Time.deltaTime);
     }
     
     IEnumerator PulseBloom()
@@ -42,7 +42,6 @@ public class CameraController : MonoBehaviour
         bloomFX.intensity.value = 30f;
         while (bloomFX.intensity.value > 10f)
         {
-            Debug.Log(bloomFX.intensity.value);
             yield return null;
             bloomFX.intensity.value -= Time.deltaTime * bloomPulseSpeed;
         }

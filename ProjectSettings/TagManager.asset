@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Wall
   - InnerWall
+  - Coin
   layers:
   - Default
   - TransparentFX
@@ -52,6 +53,9 @@ TagManager:
     locked: 0
   - name: Characters
     uniqueID: 279293265
+    locked: 0
+  - name: Trees
+    uniqueID: 3358427347
     locked: 0
   - name: Effects
     uniqueID: 2749926085

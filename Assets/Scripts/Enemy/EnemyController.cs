@@ -4,7 +4,7 @@ using Random = UnityEngine.Random;
 
 public class EnemyController : EntityController
 {
-    [SerializeField] private int health = 4;
+    [SerializeField] protected int health = 4;
     [SerializeField] private GameObject coinPrefab;
     [SerializeField] private int coinReward = 2;
 
