@@ -1,10 +1,16 @@
-﻿using System.Security.Cryptography;
+﻿using System;
+using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class PlayerController : Singleton<PlayerController>
 {
 
     public bool canMove = true;
+    [SerializeField] private GameObject nextLevelImage;
+    [SerializeField] private GameObject gameOverImage;
+    
     private void Awake()
     {
         Physics2D.queriesStartInColliders = false;
@@ -23,19 +29,19 @@ public class PlayerController : Singleton<PlayerController>
         }
         
         var moveVec = Vector2.zero;
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
         {
             moveVec = Vector2.right;
         }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
         {
             moveVec  = Vector2.left;
         }
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {
             moveVec = Vector2.up;
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
         {
             moveVec  = Vector2.down;
         }
@@ -43,14 +49,12 @@ public class PlayerController : Singleton<PlayerController>
         var hit = Physics2D.Raycast(transform.position, moveVec, 1f);
         if (hit.collider == null)
         {
-            CheckDrag(moveVec);
-            transform.position = (Vector2)transform.position + moveVec;
+            MoveAndDrag(moveVec);
         }
         else if(hit.collider.CompareTag("InnerWall"))
         {
             Destroy(hit.collider.gameObject);
-            CheckDrag(moveVec);
-            transform.position = (Vector2)transform.position + moveVec;
+            MoveAndDrag(moveVec);
         }
         else if(hit.collider.CompareTag("Turret"))
         {
@@ -62,9 +66,31 @@ public class PlayerController : Singleton<PlayerController>
                 transform.position = (Vector2)transform.position + moveVec;
             }
         }
+        else if(hit.collider.CompareTag("Goal"))
+        {
+            MoveAndDrag(moveVec);
+            canMove = false;
+            nextLevelImage.SetActive(true);
+        }
     }
 
-    private void CheckDrag(Vector2 moveVec)
+    private void MoveAndDrag(Vector2 moveVec)
+    {
+        var dragged = CheckDrag(moveVec);
+        transform.position = (Vector2) transform.position + moveVec;
+        EndDrag(dragged, moveVec);
+    }
+
+    private void EndDrag(GameObject dragged, Vector2 moveVec)
+    {
+        if (dragged == null)
+        {
+            return;
+        }
+        dragged.transform.position = (Vector2) transform.position - moveVec;
+    }
+
+    private GameObject CheckDrag(Vector2 moveVec)
     {
         if (Input.GetKey(KeyCode.LeftShift))
         {
@@ -72,8 +98,19 @@ public class PlayerController : Singleton<PlayerController>
             var dragHit = Physics2D.Raycast(transform.position, dragVec, 1f);
             if (dragHit.collider != null && dragHit.collider.CompareTag("Turret"))
             {
-                dragHit.transform.position = (Vector2) dragHit.transform.position + moveVec;
+                return dragHit.collider.gameObject;
             }
         }
+
+        return null;
+    }
+
+    private void OnDestroy()
+    {
+        if (gameOverImage == null)
+        {
+            return;
+        }
+        gameOverImage.SetActive(true);
     }
 }

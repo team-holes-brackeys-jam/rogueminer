@@ -6,9 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/Scenes/00_mainmenu.unity
     guid: 13dd263e5e2813a478e7e7c20b275fad
   - enabled: 1
-    path: Assets/Scenes/Main.unity
-    guid: 34e491c5a10f648fb9fefbc28da74997
+    path: Assets/Scenes/baby_steps.unity
+    guid: 5c9cc62e0c1dc6642aae0511fb94db03
+  - enabled: 1
+    path: Assets/Scenes/extravagant_room.unity
+    guid: 2f2153f165216e94aacced790afeaf8a
+  - enabled: 1
+    path: Assets/Scenes/two_towers.unity
+    guid: d3c35431a2ebe1a41ad3d04c29884cbf
+  - enabled: 1
+    path: Assets/Scenes/turret_staircase.unity
+    guid: 36fa61b6803dd1b459297194d6c81169
+  - enabled: 1
+    path: Assets/Scenes/hidden_secret.unity
+    guid: 4a6723fdb56c5324292443dc33025fd5
   m_configObjects: {}

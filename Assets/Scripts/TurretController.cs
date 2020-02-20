@@ -18,6 +18,13 @@ public class TurretController : MonoBehaviour
 
     private IEnumerator Shoot(GameObject value)
     {
+        if (value == gameObject)
+        {
+            // TODO dirty fix for a very weird bug :thinking:
+            PlayerController.Instance.canMove = true;
+            yield break;
+        }
+        
         while (Vector3.Distance(transform.position, value.transform.position) > .25f)
         {
 
