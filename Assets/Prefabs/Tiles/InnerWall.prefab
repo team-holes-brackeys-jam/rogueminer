@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 831472502144178482}
   - component: {fileID: 1137200463421910479}
   - component: {fileID: 7318693176909267058}
-  - component: {fileID: 9130825375016424709}
   m_Layer: 0
   m_Name: InnerWall
   m_TagString: InnerWall
@@ -109,17 +108,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &9130825375016424709
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3728098500039259859}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6aa88b48a041e3746832210eaab1acfc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxDurability: 100
-  currentDurability: 0

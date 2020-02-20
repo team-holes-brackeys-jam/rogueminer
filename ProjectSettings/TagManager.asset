@@ -9,6 +9,7 @@ TagManager:
   - InnerWall
   - Coin
   - Turret
+  - Goal
   layers:
   - Default
   - TransparentFX
