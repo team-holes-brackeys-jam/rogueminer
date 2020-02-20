@@ -83,6 +83,9 @@ TextureImporter:
   - first:
       213: -8305803365058092108
     second: tiles_13
+  - first:
+      213: -8866594627533736760
+    second: tiles_13
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -174,7 +177,7 @@ TextureImporter:
         y: 224
         width: 32
         height: 32
-      alignment: 6
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -195,7 +198,7 @@ TextureImporter:
         y: 224
         width: 32
         height: 32
-      alignment: 6
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -216,7 +219,7 @@ TextureImporter:
         y: 224
         width: 32
         height: 32
-      alignment: 6
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -237,7 +240,7 @@ TextureImporter:
         y: 224
         width: 32
         height: 32
-      alignment: 6
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -258,7 +261,7 @@ TextureImporter:
         y: 224
         width: 32
         height: 32
-      alignment: 6
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -279,7 +282,7 @@ TextureImporter:
         y: 224
         width: 32
         height: 32
-      alignment: 6
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -300,7 +303,7 @@ TextureImporter:
         y: 224
         width: 32
         height: 32
-      alignment: 6
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -321,7 +324,7 @@ TextureImporter:
         y: 224
         width: 32
         height: 32
-      alignment: 6
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -342,7 +345,7 @@ TextureImporter:
         y: 192
         width: 32
         height: 32
-      alignment: 6
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -363,7 +366,7 @@ TextureImporter:
         y: 192
         width: 32
         height: 32
-      alignment: 6
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -384,7 +387,7 @@ TextureImporter:
         y: 192
         width: 32
         height: 32
-      alignment: 6
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -405,7 +408,7 @@ TextureImporter:
         y: 192
         width: 32
         height: 32
-      alignment: 6
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -426,7 +429,7 @@ TextureImporter:
         y: 192
         width: 32
         height: 32
-      alignment: 6
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -447,15 +450,15 @@ TextureImporter:
         y: 192
         width: 32
         height: 32
-      alignment: 6
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b3e77378dbdbbc80800000000000000
-      internalID: -8305803365058092108
+      spriteID: 8c4f67ad92783f480800000000000000
+      internalID: -8866594627533736760
       vertices: []
       indices: 
       edges: []

@@ -2,7 +2,7 @@
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class EnemyController : EntityController
+public class EnemyController : MonoBehaviour
 {
     [SerializeField] protected int health = 4;
     [SerializeField] private GameObject coinPrefab;

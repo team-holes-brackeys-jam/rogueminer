@@ -8,44 +8,24 @@ public class CameraController : MonoBehaviour
     private Transform _playerTransform;
 
     [SerializeField] private float speed = 3;
-    private Bloom bloomFX;
+    private Bloom bloomFx;
     [SerializeField] private float bloomPulseSpeed = 10f;
 
-    // Start is called before the first frame update
     private void Start()
     {
-        bloomFX = Camera.main.GetComponent<PostProcessVolume>().profile.GetSetting<Bloom>();
+        bloomFx = GetComponent<PostProcessVolume>().profile.GetSetting<Bloom>();
         _playerTransform = PlayerController.Instance.transform;
     }
 
-    // Update is called once per frame
-    private void Update()
-    {
-        if (_playerTransform == null)
-        {
-            try
-            {
-                _playerTransform = PlayerController.Instance.transform;
-            }
-            catch (Exception e)
-            {
-                Debug.LogError(e);
-                return;
-            }
-        }
-        // TODO Better camera pls
-        transform.position = Vector3.MoveTowards(transform.position, _playerTransform.position - Vector3.forward, speed * Time.deltaTime);
-    }
-    
     IEnumerator PulseBloom()
     {
-        bloomFX.intensity.value = 30f;
-        while (bloomFX.intensity.value > 10f)
+        bloomFx.intensity.value = 30f;
+        while (bloomFx.intensity.value > 10f)
         {
             yield return null;
-            bloomFX.intensity.value -= Time.deltaTime * bloomPulseSpeed;
+            bloomFx.intensity.value -= Time.deltaTime * bloomPulseSpeed;
         }
-        bloomFX.intensity.value = 10f;
+        bloomFx.intensity.value = 10f;
     }
 
     public void DoPulseBloom()
