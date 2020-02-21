@@ -510,6 +510,7 @@ MonoBehaviour:
     type: 3}
   canMove: 1
   anim: {fileID: 7127825200416678893}
+  visual: {fileID: 3616044160103600688}
 --- !u!61 &4657232988420728444
 BoxCollider2D:
   m_ObjectHideFlags: 0

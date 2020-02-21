@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using DG.Tweening;
 using UnityEngine;
 
 public class PlayerController : Singleton<PlayerController>
@@ -12,6 +13,7 @@ public class PlayerController : Singleton<PlayerController>
     private CameraController cameraController;
     [SerializeField] private Animator anim;
     private static readonly int IsMining = Animator.StringToHash("IsMining");
+    [SerializeField] private GameObject visual;
 
     private void Awake()
     {
@@ -44,12 +46,13 @@ public class PlayerController : Singleton<PlayerController>
         if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
         {
             moveVec = Vector2.right;
+            visual.transform.localScale = Vector3.one;
       
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
         {
             moveVec  = Vector2.left;
-          
+            visual.transform.localScale = Vector3.one + Vector3.left * 2;
         }
         if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {
@@ -89,8 +92,17 @@ public class PlayerController : Singleton<PlayerController>
         {
             MoveAndDrag(moveVec);
             canMove = false;
-            nextLevelImage.SetActive(true);
+            StartCoroutine(nameof(DownTheHole));
         }
+    }
+
+    private IEnumerator DownTheHole()
+    {
+        transform.DOMove(transform.position + Vector3.up * .25f, .33f);
+        yield return transform.DOScale(Vector3.one * 1.25f, .33f).WaitForCompletion();
+        transform.DOScale(0, 1f);
+        transform.DOMove(transform.position - Vector3.up * .5f, 1f);
+        nextLevelImage.SetActive(true);
     }
 
     private void MoveAndDrag(Vector2 moveVec)
