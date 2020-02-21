@@ -44,18 +44,22 @@ public class PlayerController : Singleton<PlayerController>
         if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
         {
             moveVec = Vector2.right;
+      
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
         {
             moveVec  = Vector2.left;
+          
         }
         if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {
             moveVec = Vector2.up;
+         
         }
         if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
         {
             moveVec  = Vector2.down;
+   
         }
 
         var hit = Physics2D.Raycast(transform.position, moveVec, 1f);
