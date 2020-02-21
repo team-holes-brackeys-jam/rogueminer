@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class PlayerController : Singleton<PlayerController>
 {
@@ -6,15 +7,22 @@ public class PlayerController : Singleton<PlayerController>
     public bool canMove = true;
     private GameObject nextLevelImage;
     private GameObject gameOverImage;
+    private CameraController cameraController;
     public Animator anim;  
     
     private void Awake()
     {
+        Physics2D.queriesStartInColliders = false;
+        cameraController = Camera.main.GetComponent<CameraController>();
         nextLevelImage = GameObject.Find("NextLevelImage");
         gameOverImage = GameObject.Find("GameOverImage");
+        if (nextLevelImage == null)
+        {
+            Debug.LogError("CANVAS NOT ACTIVATED. PLEASE ACTIVATE BEFORE BUILDING GAME.");
+            return;
+        }
         nextLevelImage.SetActive(false);
         gameOverImage.SetActive(false);
-        Physics2D.queriesStartInColliders = false;
     }
 
     private void Update()
@@ -59,6 +67,7 @@ public class PlayerController : Singleton<PlayerController>
         else if(hit.collider.CompareTag("InnerWall"))
         {
             Destroy(hit.collider.gameObject);
+            cameraController.DoScreenShake();
             MoveAndDrag(moveVec);
 
             anim.SetTrigger("IsMining"); 
