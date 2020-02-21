@@ -1477,6 +1477,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1137200463421910479, guid: a642cb703cf3e3f4e909a45c3fd9bb01,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 839383257
+      objectReference: {fileID: 0}
+    - target: {fileID: 1137200463421910479, guid: a642cb703cf3e3f4e909a45c3fd9bb01,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3728098500039259859, guid: a642cb703cf3e3f4e909a45c3fd9bb01,
         type: 3}
       propertyPath: m_Name
@@ -3041,14 +3051,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1439108746}
     m_Modifications:
-    - target: {fileID: 1227879070, guid: 7733370228c8ec94f8e0097c6d7adf42, type: 3}
-      propertyPath: nextLevelImage
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1227879070, guid: 7733370228c8ec94f8e0097c6d7adf42, type: 3}
-      propertyPath: gameOverImage
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 5770771200608037084, guid: 7733370228c8ec94f8e0097c6d7adf42,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3346,7 +3348,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Goal
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3765973700596262274, guid: f87c4aaef42bd894eb3e38a071ed3027, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f87c4aaef42bd894eb3e38a071ed3027, type: 3}
 --- !u!4 &2477458266977845172 stripped
 Transform:
@@ -3365,6 +3368,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Main Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 4078002616220355628, guid: 5bd832e7d953a0147a3afcebd352ef66,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.14117648
+      objectReference: {fileID: 0}
+    - target: {fileID: 4078002616220355628, guid: 5bd832e7d953a0147a3afcebd352ef66,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.18431373
+      objectReference: {fileID: 0}
+    - target: {fileID: 4078002616220355628, guid: 5bd832e7d953a0147a3afcebd352ef66,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.23529413
       objectReference: {fileID: 0}
     - target: {fileID: 4078002616220355631, guid: 5bd832e7d953a0147a3afcebd352ef66,
         type: 3}

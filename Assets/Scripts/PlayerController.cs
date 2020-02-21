@@ -1,15 +1,18 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class PlayerController : Singleton<PlayerController>
 {
+    [SerializeField] private GameObject breakingFX;
 
     public bool canMove = true;
     private GameObject nextLevelImage;
     private GameObject gameOverImage;
     private CameraController cameraController;
-    public Animator anim;  
-    
+    [SerializeField] private Animator anim;
+    private static readonly int IsMining = Animator.StringToHash("IsMining");
+
     private void Awake()
     {
         Physics2D.queriesStartInColliders = false;
@@ -65,8 +68,8 @@ public class PlayerController : Singleton<PlayerController>
             Destroy(hit.collider.gameObject);
             cameraController.DoScreenShake();
             MoveAndDrag(moveVec);
-
-            anim.SetTrigger("IsMining"); 
+            Instantiate(breakingFX, transform.position + Vector3.back * .1f, Quaternion.identity);
+            anim.SetTrigger(IsMining);
         }
         else if(hit.collider.CompareTag("Turret"))
         {
