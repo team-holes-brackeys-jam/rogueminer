@@ -1826,11 +1826,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-<<<<<<< HEAD
-  m_RootOrder: 3
-=======
   m_RootOrder: 1
->>>>>>> 3da02c2dc3e9061e28f5ae1d15252dbeecc2a20c
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &792387945
 PrefabInstance:
@@ -2941,8 +2937,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1784639503}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-=======
 --- !u!1001 &1661893306
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3026,7 +3020,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e70ced9e04981de43b864564ec3f4acf, type: 3}
->>>>>>> 3da02c2dc3e9061e28f5ae1d15252dbeecc2a20c
 --- !u!1001 &1784639503
 PrefabInstance:
   m_ObjectHideFlags: 0
