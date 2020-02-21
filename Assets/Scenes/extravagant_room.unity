@@ -3024,14 +3024,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a642cb703cf3e3f4e909a45c3fd9bb01, type: 3}
---- !u!1 &1273707485
-  - component: {fileID: 1273707487}
-  - component: {fileID: 1273707486}
-  m_Layer: 0
-  m_Name: frame1
-  m_TagString: Untagged
---- !u!95 &1273707486
-  m_Avatar: {fileID: 0}
 --- !u!4 &1293101701 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 831472502144178482, guid: a642cb703cf3e3f4e909a45c3fd9bb01,
