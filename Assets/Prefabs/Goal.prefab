@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6116440355885811409}
   - component: {fileID: 3598316341089539709}
   - component: {fileID: 1226249653601084768}
-  - component: {fileID: 3765973700596262274}
+  - component: {fileID: 4062186307532152095}
   m_Layer: 0
   m_Name: Goal
   m_TagString: Goal
@@ -109,7 +109,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!95 &3765973700596262274
+--- !u!95 &4062186307532152095
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
