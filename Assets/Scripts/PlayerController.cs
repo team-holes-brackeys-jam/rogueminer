@@ -10,6 +10,7 @@ public class PlayerController : Singleton<PlayerController>
     public bool canMove = true;
     [SerializeField] private GameObject nextLevelImage;
     [SerializeField] private GameObject gameOverImage;
+    public Animator anim;  
     
     private void Awake()
     {
@@ -55,6 +56,8 @@ public class PlayerController : Singleton<PlayerController>
         {
             Destroy(hit.collider.gameObject);
             MoveAndDrag(moveVec);
+
+            anim.SetTrigger("IsMining"); 
         }
         else if(hit.collider.CompareTag("Turret"))
         {
