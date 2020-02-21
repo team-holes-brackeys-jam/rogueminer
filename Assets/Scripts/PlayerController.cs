@@ -1,19 +1,19 @@
-﻿using System;
-using System.Security.Cryptography;
-using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 public class PlayerController : Singleton<PlayerController>
 {
 
     public bool canMove = true;
-    [SerializeField] private GameObject nextLevelImage;
-    [SerializeField] private GameObject gameOverImage;
+    private GameObject nextLevelImage;
+    private GameObject gameOverImage;
     public Animator anim;  
     
     private void Awake()
     {
+        nextLevelImage = GameObject.Find("NextLevelImage");
+        gameOverImage = GameObject.Find("GameOverImage");
+        nextLevelImage.SetActive(false);
+        gameOverImage.SetActive(false);
         Physics2D.queriesStartInColliders = false;
     }
 
