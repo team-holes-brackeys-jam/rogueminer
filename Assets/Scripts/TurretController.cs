@@ -19,7 +19,7 @@ public class TurretController : MonoBehaviour
         }
         PlayerController.Instance.canMove = false;
         Instantiate(arrowPrefab, transform.position, transform.rotation);
-        Instantiate(breakFX, transform.position, Quaternion.identity);
+        Instantiate(breakFX, transform.position + Vector3.back * .1f, Quaternion.identity);
         Destroy(gameObject);
     }
 

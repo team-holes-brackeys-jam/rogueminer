@@ -2,6 +2,7 @@
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
+using Random = System.Random;
 
 public class PlayerController : Singleton<PlayerController>
 {
@@ -14,6 +15,17 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private Animator anim;
     private static readonly int IsMining = Animator.StringToHash("IsMining");
     [SerializeField] private GameObject visual;
+    [SerializeField] private GameObject playerHurtFX;
+    
+    [Header("Audio stuff")] [SerializeField]
+    private AudioClip digSound;
+    [SerializeField] private AudioClip noDigSound;
+    [SerializeField] private AudioClip downTheHoleSound;
+    [SerializeField] private AudioClip dragSoundFX;
+    [SerializeField] private AudioClip noDragSoundFX;
+    
+    [SerializeField]
+    private AudioSource audioSource;
 
     private void Awake()
     {
@@ -65,6 +77,11 @@ public class PlayerController : Singleton<PlayerController>
    
         }
 
+        if (moveVec == Vector2.zero)
+        {
+            return;
+        }
+
         var hit = Physics2D.Raycast(transform.position, moveVec, 1f);
         if (hit.collider == null)
         {
@@ -76,6 +93,7 @@ public class PlayerController : Singleton<PlayerController>
             cameraController.DoScreenShake();
             MoveAndDrag(moveVec);
             Instantiate(breakingFX, transform.position + Vector3.back * .1f, Quaternion.identity);
+            PlayFromAudioSource(digSound);
             anim.SetTrigger(IsMining);
         }
         else if(hit.collider.CompareTag("Turret"))
@@ -86,15 +104,33 @@ public class PlayerController : Singleton<PlayerController>
             {
                 turretController.transform.position = (Vector2)turretController.transform.position + moveVec;
                 transform.position = (Vector2)transform.position + moveVec;
+                PlayFromAudioSource(dragSoundFX, 1.2f, 1.4f);
+            }
+            else
+            {
+                PlayFromAudioSource(noDragSoundFX);
             }
         }
         else if(hit.collider.CompareTag("Goal"))
         {
             MoveAndDrag(moveVec);
             canMove = false;
+            PlayFromAudioSource(downTheHoleSound);
             StartCoroutine(nameof(DownTheHole));
         }
+        else
+        {
+            PlayFromAudioSource(noDigSound);
+        }
     }
+
+    private void PlayFromAudioSource(AudioClip audioClip, float minPitch = 1.4f, float maxPitch = 1.6f)
+    {
+        var pitch = UnityEngine.Random.Range(minPitch, maxPitch);
+        audioSource.pitch = pitch;
+        audioSource.PlayOneShot(audioClip);
+    }
+
 
     private IEnumerator DownTheHole()
     {
@@ -118,6 +154,7 @@ public class PlayerController : Singleton<PlayerController>
         {
             return;
         }
+        PlayFromAudioSource(dragSoundFX, 1.2f, 1.4f);
         dragged.transform.position = (Vector2) transform.position - moveVec;
     }
 
@@ -143,5 +180,10 @@ public class PlayerController : Singleton<PlayerController>
             return;
         }
         gameOverImage.SetActive(true);
+    }
+
+    public void Ouch()
+    {
+        Instantiate(playerHurtFX, transform.position, Quaternion.identity);
     }
 }

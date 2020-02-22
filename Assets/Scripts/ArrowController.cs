@@ -12,6 +12,10 @@ public class ArrowController : MonoBehaviour
         if (hit.collider != null)
         {
             PlayerController.Instance.canMove = true;
+            if(hit.collider.gameObject.tag == "Player")
+            {
+                hit.collider.gameObject.GetComponent<PlayerController>().Ouch();
+            }
             Destroy(hit.collider.gameObject);
             Destroy(gameObject);
             
