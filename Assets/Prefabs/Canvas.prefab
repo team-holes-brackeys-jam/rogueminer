@@ -64,7 +64,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: a8df648e6129620448b57accf9839e54, type: 3}
+    m_Font: {fileID: 12800000, guid: 368ce50c7635bf6499a9bb476fd05c44, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
@@ -285,7 +285,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: a8df648e6129620448b57accf9839e54, type: 3}
+    m_Font: {fileID: 12800000, guid: 368ce50c7635bf6499a9bb476fd05c44, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
@@ -326,8 +326,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 501569490404175462}
+  m_Children: []
   m_Father: {fileID: 501569490989905916}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -363,7 +362,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: a8df648e6129620448b57accf9839e54, type: 3}
+    m_Font: {fileID: 12800000, guid: 797018dbf797f2948b2cf29bc1438520, type: 3}
     m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
@@ -408,8 +407,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 501569490033574511}
-  m_Father: {fileID: 501569490322632532}
-  m_RootOrder: 0
+  m_Father: {fileID: 501569490989905916}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -582,7 +581,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: a8df648e6129620448b57accf9839e54, type: 3}
+    m_Font: {fileID: 12800000, guid: 797018dbf797f2948b2cf29bc1438520, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
@@ -594,7 +593,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Yeah boi u did it
+  m_Text: WELL DONE
 --- !u!1 &501569490787599759
 GameObject:
   m_ObjectHideFlags: 0
@@ -800,6 +799,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 501569490322632532}
+  - {fileID: 501569490404175462}
   m_Father: {fileID: 501569490787599755}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
