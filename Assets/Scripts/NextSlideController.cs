@@ -18,7 +18,7 @@ public class NextSlideController : MonoBehaviour
         {
             if (SceneManager.GetActiveScene().buildIndex + 1 >= SceneManager.sceneCountInBuildSettings)
             {
-                SceneManager.LoadScene(0);
+                SceneManager.LoadScene(1);
             }
             else
             {

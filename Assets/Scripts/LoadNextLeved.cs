@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenuButtonController : MonoBehaviour
+public class LoadNextLeved : MonoBehaviour
 {
-    public void GoToMainMenu()
+    void Start()
     {
         SceneManager.LoadScene(1);
     }

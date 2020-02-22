@@ -5,6 +5,6 @@ public class PlayButtonController : MonoBehaviour
 {
     public void GoToGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 }
