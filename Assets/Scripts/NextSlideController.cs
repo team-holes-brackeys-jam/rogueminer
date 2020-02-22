@@ -24,6 +24,7 @@ public class NextSlideController : MonoBehaviour
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
+            return;
         }
         slides[currentSlide].SetActive(true);
 
