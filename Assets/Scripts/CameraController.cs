@@ -1,5 +1,7 @@
-﻿using DG.Tweening;
+﻿using System;
+using DG.Tweening;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraController : MonoBehaviour
 {
@@ -7,7 +9,15 @@ public class CameraController : MonoBehaviour
 
     [SerializeField] private float shakeDuration = 1f;
     [SerializeField] private float shakeIntensity = 1f;
-    
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+    }
+
     private void Start()
     {
         originalPos = transform.position;
