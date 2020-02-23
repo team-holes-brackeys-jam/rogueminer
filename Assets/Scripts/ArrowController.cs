@@ -3,20 +3,20 @@
 public class ArrowController : MonoBehaviour
 {
     [SerializeField] private float speed = 6f;
-    void Update()
+
+    private void Update()
     {
-        var hit = Physics2D.Raycast(transform.position, transform.up, .1f);
-        if (hit.collider != null)
-        {
-            PlayerController.Instance.canMove = true;
-            if(hit.collider.gameObject.CompareTag("Player"))
-            {
-                hit.collider.gameObject.GetComponent<PlayerController>().Ouch();
-            }
-            Destroy(hit.collider.gameObject);
-            Destroy(gameObject);
-            
-        }
         transform.position += transform.up * (speed * Time.deltaTime);
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        PlayerController.Instance.canMove = true;
+        if (other.gameObject.CompareTag("Player"))
+        {
+            other.gameObject.GetComponent<PlayerController>().Ouch();
+        }
+        Destroy(other.gameObject);
+        Destroy(gameObject);
     }
 }
